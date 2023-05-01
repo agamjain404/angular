@@ -1,0 +1,28 @@
+Visit app.module.ts
+
+Visit app.component.html (<router-outlet>)
+
+Visit app.component.html (Router link)
+
+'/servers' can be considered as absolute path which will be beginning from slash just after the host ends
+'servers' can be considered as relative path which will get appended after the current path
+'../servers' can also give directory structured paths which will get appended after removing the last value.
+
+Programatically routing to a different route
+home.component.html Click on load servers it will navigate to a different router using router.navigate() method which expects the navigation route in an array.
+Using relative path to navigate programmaticaly servers.component.ts(onReload()) and servers.component.html(Reload Page)
+
+Accessing the route parameters using this.route.snapshot in (user.component.ts and user.component.html)
+
+Always unsubscribe to an observable you had subscribed at the time of component destroy. (user.component.ts(ngOnDestroy))
+
+Passing QueryParams and Fragments
+servers.component.html
+
+Passing QueryParams and Fragments Programatically using navigate Method home.component.html(LoadServer1)
+
+Retrieving data from QueryParams(edit-server.component.ts)
+
+
+Redirecting requests which are not avaialble in out producr (page-not-found)
+

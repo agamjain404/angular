@@ -1,0 +1,29 @@
+<!-- With routing we can switch to pages. Router can be used to introduce multiple pages in a single page applications -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <!-- This will work fine but it always reloads in every navigation -->
+        <!-- <li role="presentation" class="active"><a href="">Home</a></li>
+        <li role="presentation"><a href="/servers">Servers</a></li>
+        <li role="presentation"><a href="/users">Users</a></li> -->
+        
+        <!-- Instead of using href we can use routerLink which doesn't reload the complete application. -->
+        <!-- <li role="presentation" class="active"><a routerLink="/">Home</a></li>
+        <li role="presentation"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation"><a routerLink="/users">Users</a></li> -->
+        
+        <!-- To get activated a particular class on the basis of a particular path inisde routerLink we can use routerLinkActive attribute. routerLinkActiveOptions will give us option to activate routerLinkActive if we have excat same path available  -->
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/users">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- The place where all router output component should get loaded -->
+      <router-outlet></router-outlet>
+  </div>
+  </div>
+</div>
