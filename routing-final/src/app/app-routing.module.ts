@@ -34,6 +34,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    // Used to introduce a hash(#) in between the URL
     // RouterModule.forRoot(appRoutes, {useHash: true})
     RouterModule.forRoot(appRoutes)
   ],
