@@ -13,6 +13,9 @@ import { CustomObservableComponent } from './custom-observable/custom-observable
 import { MapComponent } from './map/map.component';
 import { PluckComponent } from './pluck/pluck.component';
 import { FilterComponent } from './filter/filter.component';
+import { TapComponent } from './tap/tap.component';
+import { TakeComponent } from './take/take.component';
+import { RetryComponent } from './retry/retry.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { FilterComponent } from './filter/filter.component';
     MapComponent,
     PluckComponent,
     FilterComponent,
+    TapComponent,
+    TakeComponent,
+    RetryComponent,
   ],
   imports: [
     BrowserModule,
