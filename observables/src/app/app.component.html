@@ -38,5 +38,57 @@
 <!-- Used to autounsubscribe the observable after data emition is completed for certain times. -->
 <!-- <app-take></app-take> -->
 
+<!-- Used to retry again and again to fetch the data from a api (Basically re-subscribing a observable if it is not subscribed due to some error.) -->
+<!-- <app-retry></app-retry> -->
 
-<app-retry></app-retry>
+<!-- Debounce time is used to optimise sending the request to the server. Example if we are building a search functionality and want to search on key up event then sending the request everytime of key up can be costly. So, here we can use debounce time which send the request ones you take a break while typing for a particular time. -->
+<!-- <app-debounce-time></app-debounce-time> -->
+
+<!-- Subject is mainly used to do cross component communication with same state. Subject can work in both ways as Observer(next(), error(), complete()) and Observable(pipe(), subscribe()) -->
+<!-- <app-subject></app-subject> -->
+
+<!-- 
+    Replay subject is same as subject it can be used to do cross component communication with same state. It can be considered as statueful subject as it keeps track of previous values passed in subject. It will keep track of previous values according to the number passed in it. Like if 3 is passed while creating ReplaySubject then it will remember last 3 values emitted in subject and whenever we subscribe it at some other place it will always emit last 3 values present inside replay subject and then start emitting response.
+ -->
+<!-- <app-replay-subject></app-replay-subject> -->
+
+<!-- Async subject gives us only the last value emitted into subject when the subscription is completed. If subscription is not completed then even the last value will not be subscribed.  Means we can emit many observables but subject will only subscribe the last value emitted when it is completed.-->
+<!-- <app-async-subject></app-async-subject> -->
+
+<!-- Concat operator is nothing but used to concat the data emitted by two or more observable streams. It will concat the data on the basis of order of observables you passed in concat method. -->
+<!-- <app-concat></app-concat> -->
+
+<!-- Merge operator is nothing but used to merge the data emitted by two or more observables consistently. Means data emitted firstly from any observable will be subscribed first and then another data will be subscribed accordingly -->
+<!-- <app-merge></app-merge> -->
+
+<!-- Merge map operator is used to flatten the observables. If we are getting another observable in response of a observable then  we need to subscribe it again and again. Here Mergemap comes into picture and give the end response by subscribing all the obsservables-->
+<!-- <app-merge-map></app-merge-map> -->
+
+<!-- Concat map operator is used to flatten the observalbe.If we are getting another observable in response of a observable then  we need to subscribe it again and again. Here Concat Map comes into picture and subscribes data in a sequence. And it willl not subscribe the another data until and unless the previous data emitted has completed all its processes.  -->
+<!-- <app-concat-map></app-concat-map> -->
+
+<!-- Note the difference between concatMap and mergeMap. Because concatMap does not subscribe to the next observable until the previous completes, the value from the source delayed by 2000ms will be emitted first. Contrast this with mergeMap which subscribes immediately to inner observables, the observable with the lesser delay (1000ms) will emit, followed by the observable which takes 2000ms to complete. (Means that the if we give a delay of 2 seconds in mergeMap inner observable then it will give us all emitted values together after 2 seconds. If we use concatMap then it will give first value after 2sec then emit 2nd value after 2 sec and then keep emitting accordingly.)-->
+
+<!-- Switch map operator is used to flatten the observable. If we are getting another observable in response of a observable then  we need to subscribe it again and again. Here Switch Map comes into picture but subscribes only latest emitted data and all previous emission will be unsubscribed automatically. -->
+<!-- <app-switch-map></app-switch-map> -->
+
+<!-- In RxJS, the exhaustMap operator is used to handle the scenario where you have an observable that emits values, and for each emitted value, you want to ignore new values from the source observable until the inner observable completes  -->
+<!-- exhaust-map -->
+
+<!-- combine latest is used to emit the data by combining the data of multiple streams means whatever data emitted will be subscribed with the combination of latest data emitted from other stream. -->
+<!-- <app-combine-latest></app-combine-latest> -->
+<!-- combineLatest -->
+
+<!-- 
+In RxJS, the shareReplay operator is used to share the execution and the emitted values of an observable with multiple subscribers. It allows you to create a "hot" observable that caches the emitted values and replays them to new subscribers.
+ -->
+<!-- shareReplay -->
+
+<!-- zip operator is used when data is emitted by multiple observable streams and it will get subscribed when both the streams emitted its data. -->
+<!-- <app-zip></app-zip> -->
+<!-- forkJoin operator is used when we want the last value emitted by the multiple observables. Means this operator will only subscribes ones all the observables passed are completed and emitted their last value -->
+<!-- <app-fork-join></app-fork-join> -->
+<!-- zip & forkJoin -->
+
+<!-- These operators are used to handle the error in a centralised service -->
+<!-- catchError & throwError -->

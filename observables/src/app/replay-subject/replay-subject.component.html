@@ -1,0 +1,19 @@
+<input type="text" #video/>
+<button (click)="onVideoAdd(video.value)">Add Video</button>
+
+<h1>User 1</h1>
+<div *ngFor="let item of userList1">
+    <p>Video: <span> {{ item }} </span></p>
+</div>
+
+<h1>User 2</h1>
+<div *ngFor="let item of userList2">
+    <p>Video: <span> {{ item }} </span></p>
+</div>
+<button (click)="userSubscribe1()">{{ subscribedUserList2 ? 'unsubscribe' : 'subscribe' }}</button>
+
+<h1>User 3</h1>
+<div *ngFor="let item of userList3">
+    <p>Video: <span> {{ item }} </span></p>
+</div>
+<button (click)="userSubscribe2()">{{ subscribedUserList3 ? 'unsubscribe' : 'subscribe' }}</button>

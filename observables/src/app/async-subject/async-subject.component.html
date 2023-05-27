@@ -1,0 +1,9 @@
+<input type="text" #asyncVideo>
+<button (click)="onVideoAdd(asyncVideo.value)">Add Video</button>
+
+<br>
+<br>
+
+<h1>Video</h1>
+<button (click)="onCompleteSubscription()">Complete Subscription</button>
+{{ asyncVideoText }}
